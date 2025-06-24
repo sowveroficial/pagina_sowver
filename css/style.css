@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7faff;
+    color: #1a2233;
+    min-height: 100vh;
+}
+
+header {
+    background: #1565c0;
+    padding: 16px 0 4px 0; /* antes: 24px 0 12px 0 */
+    text-align: center;
+}
+
+.logo-nome {
+    max-width: 260px;
+    width: 90vw;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #90caf9;
+}
+
+#hero {
+    background: linear-gradient(135deg, #c9e0f8 60%, #fff 100%);
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #000000;
+}
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #000000;
+}
+.cta-btn {
+    background: #1565c0;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px #1565c033;
+}
+.cta-btn:hover {
+    background: #0d47a1;
+    color: #fff;
+}
+
+#services {
+    background: #e3f2fd;
+    padding: 40px 10px;
+    text-align: center;
+}
+#services h2 {
+    color: #1565c0;
+}
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+.services-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#areas {
+    padding: 40px 10px;
+    text-align: center;
+    background: #fff;
+}
+#areas h2 {
+    color: #1565c0;
+}
+.areas-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+.area-card {
+    background: #e3f2fd;
+    border-radius: 14px;
+    padding: 28px 22px 22px 22px;
+    width: 260px;
+    box-shadow: 0 2px 8px #1565c022;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.area-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px #1565c044;
+}
+.area-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    filter: none;
+}
+.area-card h3 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+.area-card p {
+    font-size: 1em;
+    margin-bottom: 18px;
+    color: #333;
+}
+.area-btn {
+    background: #1565c0;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px #1565c033;
+}
+.area-btn:hover {
+    background: #0d47a1;
+    color: #fff;
+}
+
+#contact {
+    padding: 40px 10px;
+    text-align: center;
+    background: #e3f2fd;
+}
+#contact h2 {
+    color: #1565c0;
+}
+.contact-info {
+    margin-top: 24px;
+    color: #1a2233;
+    font-size: 1em;
+}
+.contact-info strong {
+    color: #1565c0;
+}
+
+footer {
+    background: #1565c0;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 0.95em;
+    margin-top: 30px;
+}
+.payments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.pay-icon {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+    vertical-align: middle;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+}
+footer p {
+    margin: 4px 0;
+}
+
+.header-slogan {
+    color: #e3f2fd;
+    font-size: 1.1em;
+    margin: 8px 0 18px 0; /* aumente o bottom para 18px ou mais */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .areas-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .area-card {
+        width: 90vw;
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 16px 0 8px 0;
+    }
+    .logo-nome {
+        max-width: 90vw;
+    }
+    #hero {
+        padding: 40px 5px 30px 5px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .area-card {
+        padding: 18px 10px;
+    }
+    #services, #areas, #contact {
+        padding: 24px 5px;
+    }
+}
