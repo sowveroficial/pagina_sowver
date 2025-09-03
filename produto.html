@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produto • Sowver Sentinel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="img/logo.png" alt="Sowver logo">
+        <div class="brand">SOWVER</div>
+      </div>
+
+      <nav class="desktop" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <button class="btn-hamburger" id="openMenu2" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-overlay" id="overlay2"></div>
+  <aside class="mobile-menu" id="mobileMenu2" aria-hidden="true">
+    <div class="close"><button id="closeMenu2" class="btn">✕</button></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produto.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </aside>
+
+  <main class="container">
+    <nav style="margin-top:18px;font-size:14px;color:var(--muted)">
+      <a href="index.html" style="color:var(--muted);text-decoration:none">Início</a> › <strong style="margin-left:8px">Sentinel SATA</strong>
+    </nav>
+
+    <section class="product-page">
+      <div class="product-left">
+        <img src="img/ssd.png" alt="Sowver Sentinel">
+      </div>
+
+      <aside class="product-right">
+        <h1>Sowver Sentinel • SATA</h1>
+        <p class="lead">SSD SATA 2.5" projetado para performance e confiabilidade — perfeito para desktops e notebooks.</p>
+
+        <label for="capacity">Capacidade</label>
+        <select id="capacity">
+          <option data-price="79.90">128GB — R$ 79,90</option>
+          <option data-price="199.90" selected>256GB — R$ 199,90</option>
+          <option data-price="329.90">512GB — R$ 329,90</option>
+          <option data-price="549.90">1TB — R$ 549,90</option>
+        </select>
+
+        <div class="price" id="price">R$ 199,90</div>
+
+        <div class="buy">
+          <button id="buyBtn" class="btn primary">Comprar agora</button>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-title">
+            <button class="active" data-tab="desc">Descrição</button>
+            <button data-tab="specs">Especificações</button>
+          </div>
+
+          <div class="tab-content" id="desc" style="display:block">
+            <p style="color:var(--muted)">O Sowver Sentinel é construído com NAND de boa qualidade, controlador confiável e firmware otimizado para longevidade. Ideal para sistemas operacionais, jogos e produtividade.</p>
+          </div>
+
+          <div class="tab-content" id="specs" style="display:none">
+            <ul style="color:var(--muted); list-style:disc; margin-left:18px;">
+              <li>Interface: SATA III 6Gb/s</li>
+              <li>Format: 2.5" 7mm</li>
+              <li>Temperatura de operação: 0°C a 70°C</li>
+              <li>MTBF e TBW conforme série</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container ft-grid">
+      <div>
+        <strong>Sowver</strong><br>
+        © <span id="year2"></span>
+      </div>
+      <div class="newsletter">
+        <form onsubmit="event.preventDefault(); alert('Inscrição registrada (simulado)')">
+          <input type="email" placeholder="newsletter@exemplo.com" required>
+          <button class="btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const om2 = document.getElementById('openMenu2');
+    const cm2 = document.getElementById('closeMenu2');
+    const mm2 = document.getElementById('mobileMenu2');
+    const ov2 = document.getElementById('overlay2');
+    om2.addEventListener('click', ()=>{ mm2.classList.add('open'); ov2.classList.add('show'); mm2.setAttribute('aria-hidden','false') });
+    cm2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); mm2.setAttribute('aria-hidden','true') });
+    ov2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); mm2.setAttribute('aria-hidden','true') });
+
+    // price update
+    const capacity = document.getElementById('capacity');
+    const priceEl = document.getElementById('price');
+    function updatePrice(){
+      const option = capacity.options[capacity.selectedIndex];
+      const p = option.dataset.price || option.textContent.match(/R\$\s*([0-9,.]+)/);
+      const value = typeof p === 'string' ? p : (p ? p[1] : '0');
+      priceEl.textContent = 'R$ ' + parseFloat(value).toFixed(2);
+    }
+    capacity.addEventListener('change', updatePrice);
+    updatePrice();
+
+    // buy action (simulado)
+    document.getElementById('buyBtn').addEventListener('click', ()=>{
+      const opt = capacity.options[capacity.selectedIndex].text;
+      alert('Adicionado ao carrinho:\\n' + opt + '\\n(Fluxo de compra simulado)');
+    });
+
+    // tabs
+    document.querySelectorAll('.tab-title button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.tab-title button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-content').forEach(tc=>tc.style.display='none');
+        document.getElementById(tab).style.display='block';
+      });
+    });
+
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
