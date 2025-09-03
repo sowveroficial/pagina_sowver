@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contato • Sowver</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="img/logo.png" alt="Sowver logo">
+        <div class="brand">SOWVER</div>
+      </div>
+
+      <nav class="desktop" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <button class="btn-hamburger" id="openMenu4" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="overlay4"></div>
+  <aside class="mobile-menu" id="mobileMenu4" aria-hidden="true">
+    <div class="close"><button id="closeMenu4" class="btn">✕</button></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produto.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </aside>
+
+  <main class="section container">
+    <h1>Contato</h1>
+    <p style="color:var(--muted); margin-bottom:14px;">Preencha o formulário e a nossa equipe entrará em contato.</p>
+
+    <form id="contactForm">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="telefone" placeholder="Telefone">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
+        <input type="email" name="email" placeholder="Email" required>
+        <select name="assunto">
+          <option>Duvidas</option>
+          <option>Orçamento</option>
+          <option>Suporte</option>
+        </select>
+      </div>
+
+      <label style="margin-top:8px">Enviar fotos (opcional)</label>
+      <input type="file" name="anexo" accept="image/*">
+
+      <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+
+      <button class="btn primary" type="submit">Enviar mensagem</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container ft-grid">
+      <div>
+        <strong>Sowver</strong><br>
+        © <span id="year4"></span>
+      </div>
+      <div class="newsletter">
+        <form onsubmit="event.preventDefault(); alert('Inscrição registrada (simulado)')">
+          <input type="email" placeholder="newsletter@exemplo.com" required>
+          <button class="btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const om4 = document.getElementById('openMenu4');
+    const cm4 = document.getElementById('closeMenu4');
+    const mm4 = document.getElementById('mobileMenu4');
+    const ov4 = document.getElementById('overlay4');
+    om4.addEventListener('click', ()=>{ mm4.classList.add('open'); ov4.classList.add('show'); mm4.setAttribute('aria-hidden','false') });
+    cm4.addEventListener('click', ()=>{ mm4.classList.remove('open'); ov4.classList.remove('show'); mm4.setAttribute('aria-hidden','true') });
+    ov4.addEventListener('click', ()=>{ mm4.classList.remove('open'); ov4.classList.remove('show'); mm4.setAttribute('aria-hidden','true') });
+
+    // form (simulado)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // aqui você pode integrar com backend / email / endpoint
+      alert('Mensagem enviada! (simulado) Obrigado, responderemos em breve.');
+      this.reset();
+    });
+
+    document.getElementById('year4').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
