@@ -11,7 +11,7 @@
   <header class="header">
     <div class="container header-inner">
       <div class="logo">
-        <img src="img/logo.png" alt="Sowver logo">
+        <img src="imagens/logo.png" alt="Sowver logo">
         <div class="brand">SOWVER</div>
       </div>
 
@@ -26,7 +26,6 @@
     </div>
   </header>
 
-  <!-- mobile menu -->
   <div class="mobile-overlay" id="overlay2"></div>
   <aside class="mobile-menu" id="mobileMenu2" aria-hidden="true">
     <div class="close"><button id="closeMenu2" class="btn">✕</button></div>
@@ -45,7 +44,7 @@
 
     <section class="product-page">
       <div class="product-left">
-        <img src="img/ssd.png" alt="Sowver Sentinel">
+        <img src="imagens/ssd.png" alt="Sowver Sentinel">
       </div>
 
       <aside class="product-right">
@@ -79,7 +78,7 @@
           <div class="tab-content" id="specs" style="display:none">
             <ul style="color:var(--muted); list-style:disc; margin-left:18px;">
               <li>Interface: SATA III 6Gb/s</li>
-              <li>Format: 2.5" 7mm</li>
+              <li>Formato: 2.5" 7mm</li>
               <li>Temperatura de operação: 0°C a 70°C</li>
               <li>MTBF e TBW conforme série</li>
             </ul>
@@ -105,41 +104,37 @@
   </footer>
 
   <script>
-    // mobile menu
     const om2 = document.getElementById('openMenu2');
     const cm2 = document.getElementById('closeMenu2');
     const mm2 = document.getElementById('mobileMenu2');
     const ov2 = document.getElementById('overlay2');
-    om2.addEventListener('click', ()=>{ mm2.classList.add('open'); ov2.classList.add('show'); mm2.setAttribute('aria-hidden','false') });
-    cm2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); mm2.setAttribute('aria-hidden','true') });
-    ov2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); mm2.setAttribute('aria-hidden','true') });
 
-    // price update
+    om2.addEventListener('click', ()=>{ mm2.classList.add('open'); ov2.classList.add('show'); });
+    cm2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); });
+    ov2.addEventListener('click', ()=>{ mm2.classList.remove('open'); ov2.classList.remove('show'); });
+
     const capacity = document.getElementById('capacity');
     const priceEl = document.getElementById('price');
+
     function updatePrice(){
       const option = capacity.options[capacity.selectedIndex];
-      const p = option.dataset.price || option.textContent.match(/R\$\s*([0-9,.]+)/);
-      const value = typeof p === 'string' ? p : (p ? p[1] : '0');
-      priceEl.textContent = 'R$ ' + parseFloat(value).toFixed(2);
+      const p = option.dataset.price;
+      priceEl.textContent = 'R$ ' + parseFloat(p).toFixed(2);
     }
     capacity.addEventListener('change', updatePrice);
     updatePrice();
 
-    // buy action (simulado)
     document.getElementById('buyBtn').addEventListener('click', ()=>{
       const opt = capacity.options[capacity.selectedIndex].text;
-      alert('Adicionado ao carrinho:\\n' + opt + '\\n(Fluxo de compra simulado)');
+      alert('Adicionado ao carrinho: ' + opt + ' (simulado)');
     });
 
-    // tabs
     document.querySelectorAll('.tab-title button').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         document.querySelectorAll('.tab-title button').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        const tab = btn.dataset.tab;
         document.querySelectorAll('.tab-content').forEach(tc=>tc.style.display='none');
-        document.getElementById(tab).style.display='block';
+        document.getElementById(btn.dataset.tab).style.display='block';
       });
     });
 
