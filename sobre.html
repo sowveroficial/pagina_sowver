@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre • Sowver</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="img/logo.png" alt="Sowver logo">
+        <div class="brand">SOWVER</div>
+      </div>
+
+      <nav class="desktop" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <button class="btn-hamburger" id="openMenu3" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="overlay3"></div>
+  <aside class="mobile-menu" id="mobileMenu3" aria-hidden="true">
+    <div class="close"><button id="closeMenu3" class="btn">✕</button></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produto.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </aside>
+
+  <main class="section container">
+    <h1>Sobre a Sowver</h1>
+    <p style="color:var(--muted); margin-top:12px;">
+      A Sowver nasceu para entregar soluções de armazenamento com qualidade e preço justo.
+      Nosso primeiro produto, o <strong>Sentinel</strong>, é resultado da seleção de componentes e testes focados em durabilidade e performance.
+    </p>
+
+    <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px;">
+        <h3>Missão</h3>
+        <p style="color:var(--muted)">Entregar armazenamento confiável e acessível para usuários exigentes.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:10px;">
+        <h3>Visão</h3>
+        <p style="color:var(--muted)">Ser referência em SSDs white-label com suporte adequado ao cliente.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container ft-grid">
+      <div>
+        <strong>Sowver</strong><br>
+        © <span id="year3"></span>
+      </div>
+      <div class="newsletter">
+        <form onsubmit="event.preventDefault(); alert('Inscrição registrada (simulado)')">
+          <input type="email" placeholder="seu@email.com" required>
+          <button class="btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const om3 = document.getElementById('openMenu3');
+    const cm3 = document.getElementById('closeMenu3');
+    const mm3 = document.getElementById('mobileMenu3');
+    const ov3 = document.getElementById('overlay3');
+    om3.addEventListener('click', ()=>{ mm3.classList.add('open'); ov3.classList.add('show'); mm3.setAttribute('aria-hidden','false') });
+    cm3.addEventListener('click', ()=>{ mm3.classList.remove('open'); ov3.classList.remove('show'); mm3.setAttribute('aria-hidden','true') });
+    ov3.addEventListener('click', ()=>{ mm3.classList.remove('open'); ov3.classList.remove('show'); mm3.setAttribute('aria-hidden','true') });
+
+    document.getElementById('year3').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
