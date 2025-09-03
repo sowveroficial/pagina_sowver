@@ -1,97 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sowver - Assistência & Informática</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sowver • Sentinel SSD</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <img src="imagens/Logo.png" alt="Sowver Logo" class="logo-nome">
-        <div class="header-slogan">Tecnologia, confiança e atendimento de verdade.</div>
-        <nav>
-            <ul>
-                <li><a href="#products">Produtos</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Bem-vindo à Sowver</h1>
-            <p>Soluções em assistência técnica e venda de produtos de informática.</p>
-            <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="cta-btn">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon" style="width:22px;height:22px;margin-right:8px;">
-                Fale Conosco
-            </a>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="img/logo.png" alt="Sowver logo">
+        <div class="brand">SOWVER</div>
+      </div>
+
+      <nav class="desktop" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <button class="btn-hamburger" id="openMenu" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <!-- mobile menu -->
+  <div class="mobile-overlay" id="overlay"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="close"><button id="closeMenu" class="btn">✕</button></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produto.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h2>Sentinel — SSD SATA</h2>
+          <p>Velocidade e confiabilidade para seu PC. Design clean, componentes de qualidade e garantia dedicada.</p>
+          <a class="cta" href="produto.html">Ver produto</a>
         </div>
+        <div class="ssd-img">
+          <img src="img/ssd.png" alt="SSD Sentinel">
+        </div>
+      </div>
     </section>
 
-    <section id="areas">
-        <h2>Nossas Especialidades</h2>
-        <div class="areas-list">
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/windows.svg" alt="Informática" class="area-icon">
-                <h3>Informática</h3>
-                <p>Computadores, Notebooks, Monitores, Peças, Acessórios e Multimídia.</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/steam.svg" alt="Gamer" class="area-icon">
-                <h3>Gamer</h3>
-                <p>Cadeiras, Gabinetes, Mouses, Teclados, Headphones, Coolers e Placas de Vídeo</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/networkx.svg" alt="Redes" class="area-icon">
-                <h3>Redes</h3>
-                <p>Roteadores, Switches, Racks, Cabos, Conectores e Adaptadores</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/homeassistant.svg" alt="Automação" class="area-icon">
-                <h3>Automação</h3>
-                <p>Impressoras Térmicas, Bobinas, Leitores de Certificado Digital e Leitores de Código de Barras</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tools.svg" alt="Manutenção" class="area-icon">
-                <h3>Manutenção</h3>
-                <p>Limpeza, troca de peças, upgrades e manutenção preventiva.</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
-            <div class="area-card">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/print.svg" alt="Impressão" class="area-icon">
-                <h3>Impressão</h3>
-                <p>Impressoras, Tintas, Refis, Cartuchos e Toners</p>
-                <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" class="area-btn">Fale Conosco</a>
-            </div>
+    <section class="features">
+      <div class="container">
+        <h3>Por que escolher a Sowver?</h3>
+        <div class="feature-grid" style="margin-top:18px;">
+          <div class="feature">Velocidade consistente para boot e apps</div>
+          <div class="feature">Alta durabilidade e gerenciamento de erros</div>
+          <div class="feature">Suporte direto e garantia</div>
         </div>
+      </div>
     </section>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <div class="contact-info">
-            <p><strong>Endereço:</strong> Avenida João José Pereira, 315 - Retiro, Junqueiro/AL</p>
-            <p><strong>Telefone:</strong> (99) 99999-9999</p>
-            <p><strong>Horário:</strong> Seg a Sex, 9h às 18h</p>
-            <p><strong>E-mail:</strong> sowverbrasil@gmail.com</p>
+    <section class="products-list container">
+      <h3>Produtos</h3>
+      <div style="margin-top:14px;" class="card">
+        <img src="img/ssd.png" alt="Sentinel">
+        <div class="meta">
+          <h4>Sowver Sentinel • SATA</h4>
+          <p>256GB — ideal para uso diário, jogos e criação de conteúdo.</p>
         </div>
+        <div class="card-cta">
+          <a href="produto.html" class="btn primary">Ver</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <div class="payments">
-            <span>Formas de pagamento:</span>
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pix.svg" alt="Pix" title="Pix" class="pay-icon">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visa.svg" alt="Visa" title="Cartão Visa" class="pay-icon">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mastercard.svg" alt="Mastercard" title="Cartão Mastercard" class="pay-icon">
-            <span>Dinheiro</span>
-        </div>
-        <p>CNPJ: 00.000.000/0000-00</p>
-        <p>&copy; 2025 Sowver. Todos os direitos reservados.</p>
-    </footer>
+  <footer class="footer">
+    <div class="container ft-grid">
+      <div>
+        <strong>Sowver</strong><br>
+        © <span id="year"></span> • Todos os direitos reservados.
+      </div>
+      <div class="newsletter">
+        <form id="newsletterForm" onsubmit="event.preventDefault(); alert('Inscrição registrada (simulado)')">
+          <input type="email" placeholder="seu@email.com" required>
+          <button class="btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // menu mobile
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+
+    openMenu.addEventListener('click', ()=>{ mobileMenu.classList.add('open'); overlay.classList.add('show'); mobileMenu.setAttribute('aria-hidden','false') });
+    closeMenu.addEventListener('click', ()=>{ mobileMenu.classList.remove('open'); overlay.classList.remove('show'); mobileMenu.setAttribute('aria-hidden','true') });
+    overlay.addEventListener('click', ()=>{ mobileMenu.classList.remove('open'); overlay.classList.remove('show'); mobileMenu.setAttribute('aria-hidden','true') });
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
